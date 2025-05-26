@@ -9,14 +9,14 @@ import { BoardState, GameState, Player } from './types';
  * Manages game state and handles game logic.
  */
 const TicTacToeContainer: React.FC = () => {
-  // Initialize game state
-  const initialState: GameState = {
+  // Initialize game state with useMemo to prevent recreating on every render
+  const initialState = useMemo<GameState>(() => ({
     board: Array(9).fill(null),
     nextPlayer: 'X',
     status: 'playing',
     winner: null,
     winningLine: null,
-  };
+  }), []);
   
   const [gameState, setGameState] = useState<GameState>(initialState);
   const { board, nextPlayer, status, winner, winningLine } = gameState;

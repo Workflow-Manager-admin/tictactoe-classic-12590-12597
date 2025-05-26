@@ -1,11 +1,6 @@
-import dynamic from 'next/dynamic';
+"use client";
 
-// Using dynamic import with SSR disabled for the TicTacToeContainer
-// since it contains client-side functionality
-const TicTacToeContainer = dynamic(
-  () => import('@/components/TicTacToe/TicTacToeContainer'),
-  { ssr: false }
-);
+import TicTacToeContainer from '@/components/TicTacToe/TicTacToeContainer';
 
 export default function Home() {
   return (

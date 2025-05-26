@@ -95,7 +95,7 @@ const TicTacToeContainer: React.FC = () => {
    */
   const restartGame = useCallback(() => {
     setGameState(initialState);
-  }, []);
+  }, [initialState]);
   
   /**
    * Generate status message based on game state
